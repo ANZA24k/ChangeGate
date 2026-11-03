@@ -1,0 +1,31 @@
+{
+  "change_id": "CHG-2026-0042",
+  "artifact": "billing-api:sha256:abc123",
+  "environment": "production",
+  "policy_hash": "1c61721ce56b48fa3538c2214e80dcb885c7f5a114ae0318bbfcf870c39ffeb9",
+  "deployer": "carol@example.test",
+  "deployed_at": 1793746800,
+  "approvals": [
+    {
+      "role": "service_owner",
+      "identity": "alice@example.test",
+      "at": 1793743300,
+      "artifact": "billing-api:sha256:abc123"
+    },
+    {
+      "role": "change_manager",
+      "identity": "bob@example.test",
+      "at": 1793746801,
+      "artifact": "billing-api:sha256:abc123"
+    }
+  ],
+  "tests_passed": true,
+  "test_completed_at": 1793743500,
+  "rollback_ready": true,
+  "narratives": {
+    "scope": "Ticket CHG-2026-0042 authorizes billing-api:sha256:abc123 in production; no other service is changed.",
+    "approvals": "Bob approved only after the production deployment had already completed; prior change-manager approval was missing.",
+    "testing": "Integration, migration and smoke tests all passed against billing-api:sha256:abc123 before production deployment. Report CI-0042 lists all three suites.",
+    "rollback": "Carol owns rollback: restore billing-api:sha256:previous if error rate exceeds 1 percent for five minutes. This procedure was successfully rehearsed in staging for CHG-2026-0042."
+  }
+}

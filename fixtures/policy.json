@@ -1,0 +1,25 @@
+{
+  "organization": "Example Operations",
+  "repository": "ANZA24k/ChangeGate",
+  "environment": "production",
+  "window_start": 1793743200,
+  "window_end": 1793750400,
+  "approval_roles": [
+    "service_owner",
+    "change_manager"
+  ],
+  "approvers": {
+    "service_owner": [
+      "alice@example.test"
+    ],
+    "change_manager": [
+      "bob@example.test"
+    ]
+  },
+  "criteria": {
+    "scope": "Ticket must authorize the exact billing API artifact and production scope.",
+    "approvals": "Both designated approvers must explicitly approve the same artifact before deployment.",
+    "testing": "Integration, migration and smoke tests must pass for the exact artifact.",
+    "rollback": "A tested rollback procedure must name the previous artifact, owner and trigger."
+  }
+}
