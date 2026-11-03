@@ -4,6 +4,12 @@
 
 ChangeGate locks an organization's policy, binds a change to a byte-exact evidence bundle and evaluates production release governance. Deterministic checks enforce deployment windows, approved identities, separation of duties, approval sequence, artifact identity, testing and rollback flags. GenLayer leaders and validators independently retrieve and review evidence for meaningful authorization scope, adequate testing and usable rollback procedures.
 
+## Live deployment
+
+[Open ChangeGate on Studionet](https://explorer-studio.genlayer.com/address/0x217b9BC1B62c47443e441D40EDCE1Cd799A195fE) · [Deployment transaction](https://explorer-studio.genlayer.com/tx/0xb88f470e36c1d8b1307e563b92029efe0f41b1105ffb86e4eb01dc77b39d0297)
+
+Deployment finalized successfully with native consensus enabled on chain 61999. Live synthetic audits produced stored `COMPLIANT` and `VIOLATION` receipts after finalized successful evaluations. [Deployment and reproduction](DEPLOYMENT.md) · [Public transaction reports](deployments).
+
 ## Outcomes
 
 | Outcome | Rule |
@@ -38,7 +44,7 @@ genvm-lint check contracts/change_gate.py
 genvm-lint schema contracts/change_gate.py --output docs/abi.json
 ```
 
-The 38 tests load the actual pinned GenVM SDK and contract module, with in-memory lifecycle state and mocked web, AI and consensus transport. They are local tests, **not** evidence of live multi-validator agreement. They cover tampering, unsafe URLs, JSON ambiguity, approvals, verdict precedence, independent disagreement, ownership and hash-linked history.
+The 41 tests load the actual pinned GenVM SDK and contract module, with in-memory lifecycle state and mocked web, AI and consensus transport. They are local tests, **not** evidence of live multi-validator agreement. They cover tampering, unsafe URLs, JSON ambiguity, approvals, verdict precedence, independent disagreement, ownership and hash-linked history.
 
 Synthetic fixtures include a fully documented change, post-deployment approval violation, ambiguous test coverage and a prompt-injection attack. Regenerate them with `python scripts/make_fixtures.py`. [Evidence format](EVIDENCE.md), [deployment](DEPLOYMENT.md), [security model](SECURITY.md), [submission notes](SUBMISSION.md).
 

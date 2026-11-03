@@ -139,3 +139,27 @@ def test_contract_lifecycle(data,monkeypatch):
     with pytest.raises(Exception): cls.evaluate_change(state,claim)
     assert len(calls)==3
     assert json.loads(cls.get_status(state,claim))['head']==previous
+
+@pytest.mark.parametrize('attack',['fabricated_quote','changed_status','vm_error'])
+def test_validator_rejects_proposals_without_consuming_attempt(data,monkeypatch,attack):
+    c,p,e,m,b=data
+    state=SimpleNamespace(policies={},claims={},attempts={},receipts={},heads={})
+    monkeypatch.setattr(c.gl,'message',SimpleNamespace(sender_address='alice',contract_address='contract',chain_id=61999))
+    pid=c.ChangeGate.register_policy(state,json.dumps(p))
+    claim=c.ChangeGate.submit_change(state,pid,json.dumps(m))
+    fetches=[]
+    def fetch(url):
+        fetches.append(url); return SimpleNamespace(status=200,body=b)
+    monkeypatch.setattr(c.gl.nondet.web,'get',fetch)
+    monkeypatch.setattr(c.gl.nondet,'exec_prompt',lambda *a,**k: findings(c,e))
+    def consensus(leader,validator):
+        proposed=copy.deepcopy(leader())
+        if attack=='fabricated_quote': proposed['findings']['scope']['quote']='A fabricated approval that is not in this evidence'
+        if attack=='changed_status': proposed['findings']['scope']['status']='BREACH'
+        result=c.gl.vm.VMError('simulated') if attack=='vm_error' else c.gl.vm.Return(proposed)
+        assert validator(result) is False
+        raise RuntimeError('Rejected by simulated protocol')
+    monkeypatch.setattr(c.gl.vm,'run_nondet_unsafe',consensus)
+    with pytest.raises(RuntimeError): c.ChangeGate.evaluate_change(state,claim)
+    assert state.attempts[claim]==0 and state.receipts=={} and state.heads[claim]=='0'*64
+    if attack!='vm_error': assert len(fetches)>=2  # independent retrieval really occurred

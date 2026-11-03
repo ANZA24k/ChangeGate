@@ -1,0 +1,157 @@
+{
+  "network": "studionet",
+  "chain_id": 61999,
+  "contract": "0x217b9BC1B62c47443e441D40EDCE1Cd799A195fE",
+  "evidence_commit": "44cd5ba1257c545ba4ac1eea42ddc9c8b6bc15f9",
+  "transactions": {
+    "register_policy": {
+      "hash": "0xf906425f4b537c8f621e45d6dec05695c16e8678fa9ed27f1fa672b7c93c831b",
+      "status": "FINALIZED",
+      "consensus_result": "MAJORITY_AGREE",
+      "to": "0x217b9BC1B62c47443e441D40EDCE1Cd799A195fE",
+      "leader_only": false,
+      "leaders": [
+        {
+          "execution_result": "SUCCESS",
+          "result": {
+            "status": "return",
+            "payload": {
+              "readable": "\"af36bdbce2a20e844b357bb60294e91ce0271798ec560b1107e37c761a5f34bb\""
+            }
+          },
+          "genvm_result": {
+            "stderr": "",
+            "stdout": "",
+            "raw_error": null,
+            "error_code": null,
+            "error_description": null
+          },
+          "mode": "leader"
+        }
+      ],
+      "votes": {
+        "0x007d6451555Df7765c707284F844137927aE4e5E": "idle",
+        "0x336458747913FE397be82c4F0926ACeB3ab13618": "agree",
+        "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a": "idle",
+        "0xCe0B66448435cA53665C954705Abd753515594Cf": "agree",
+        "0xb9ed1258763dfFC83356b15e8A20236B86E42ba2": "agree"
+      }
+    },
+    "submit_change": {
+      "hash": "0xba356a1611178b125ecf3250e2014db9dc71f76f525f9b006102d11432588bf1",
+      "status": "FINALIZED",
+      "consensus_result": "MAJORITY_AGREE",
+      "to": "0x217b9BC1B62c47443e441D40EDCE1Cd799A195fE",
+      "leader_only": false,
+      "leaders": [
+        {
+          "mode": "leader",
+          "execution_result": "SUCCESS",
+          "result": {
+            "status": "return",
+            "payload": {
+              "readable": "\"09286efcc48f3e7bff4e6a75fb7a29ec38c0e2ca24b0a0763573bf536e78d46d\""
+            }
+          },
+          "genvm_result": {
+            "stderr": "",
+            "stdout": "",
+            "raw_error": null,
+            "error_code": null,
+            "error_description": null
+          }
+        }
+      ],
+      "votes": {
+        "0x007d6451555Df7765c707284F844137927aE4e5E": "agree",
+        "0x045291B293B9D68969c18B6637A8258038cf787A": "agree",
+        "0x378aED3bA912Ce77C3C66155961A7e61C2fE8F3B": "idle",
+        "0x5D9Ee6E9aAF2F0b739314A52dd9Da57cd8866dA8": "idle",
+        "0xF7D08d12dB37D3e02D1833b5cB7e56B07F114186": "agree"
+      }
+    },
+    "evaluate_change": {
+      "hash": "0x7c1972bc4bfd2693390077417e6f1f48961de292c7c8bec3311e6aaf564d1d7d",
+      "status": "FINALIZED",
+      "consensus_result": "MAJORITY_AGREE",
+      "to": "0x217b9BC1B62c47443e441D40EDCE1Cd799A195fE",
+      "leader_only": false,
+      "leaders": [
+        {
+          "mode": "leader",
+          "execution_result": "SUCCESS",
+          "result": {
+            "status": "return",
+            "payload": {
+              "readable": "\"{\\\"attempt\\\":1,\\\"chain_id\\\":61999,\\\"claim_id\\\":\\\"09286efcc48f3e7bff4e6a75fb7a29ec38c0e2ca24b0a0763573bf536e78d46d\\\",\\\"contract\\\":\\\"0x217b9BC1B62c47443e441D40EDCE1Cd799A195fE\\\",\\\"decision\\\":{\\\"error\\\":\\\"\\\",\\\"failures\\\":[],\\\"findings\\\":{\\\"approvals\\\":{\\\"quote\\\":\\\"Alice, service owner, and Bob, change manager, explicitly approved billing-api:sha256:abc123 before deployment.\\\",\\\"reason\\\":\\\"The narrative and structured records confirm both designated approvers approved the exact artifact, and the approval timestamps precede the deployment timestamp, satisfying the policy requirement.\\\",\\\"status\\\":\\\"SUPPORTED\\\"},\\\"rollback\\\":{\\\"quote\\\":\\\"Carol owns rollback: restore billing-api:sha256:previous if error rate exceeds 1 percent for five minutes.\\\",\\\"reason\\\":\\\"The narrative explicitly names the rollback owner (Carol), the previous artifact (billing-api:sha256:previous), and the trigger (error rate exceeds 1 percent for five minutes), and confirms the procedure was rehearsed, fully meeting the policy.\\\",\\\"status\\\":\\\"SUPPORTED\\\"},\\\"scope\\\":{\\\"quote\\\":\\\"Ticket CHG-2026-0042 authorizes billing-api:sha256:abc123 in production; no other service is changed.\\\",\\\"reason\\\":\\\"The narrative explicitly states the ticket authorizes the exact artifact and production environment, and the structured records confirm the artifact and environment match, fully meeting the policy criterion.\\\",\\\"status\\\":\\\"SUPPORTED\\\"},\\\"testing\\\":{\\\"quote\\\":\\\"Integration, migration and smoke tests all passed against billing-api:sha256:abc123 before production deployment.\\\",\\\"reason\\\":\\\"The narrative specifies all three required test suites passed for the exact artifact prior to deployment, which is corroborated by the structured records showing tests passed before the deployment timestamp.\\\",\\\"status\\\":\\\"SUPPORTED\\\"}},\\\"outcome\\\":\\\"COMPLIANT\\\"},\\\"decision_hash\\\":\\\"a3743e533d8a3bed867cad3ef6dabec5a2bad6ab469e0d063baad432abaedae1\\\",\\\"evidence_sha256\\\":\\\"12a8b40bf33c8c63e42635efcf0f4cb5ec8e7d30a9097e3de69ef025c06cc5e7\\\",\\\"policy_hash\\\":\\\"1c61721ce56b48fa3538c2214e80dcb885c7f5a114ae0318bbfcf870c39ffeb9\\\",\\\"policy_id\\\":\\\"af36bdbce2a20e844b357bb60294e91ce0271798ec560b1107e37c761a5f34bb\\\",\\\"previous_hash\\\":\\\"0000000000000000000000000000000000000000000000000000000000000000\\\",\\\"receipt_hash\\\":\\\"799922bb8361717edf42d9cdea58bf5b00ff877fa81015f957c96d970fca56ff\\\",\\\"version\\\":1}\""
+            }
+          },
+          "genvm_result": {
+            "stderr": "",
+            "stdout": "",
+            "raw_error": null,
+            "error_code": null,
+            "error_description": null
+          }
+        }
+      ],
+      "votes": {
+        "0x0eb3859451817bC25Cc717D4F676D54D0D3aD0aE": "agree",
+        "0x336458747913FE397be82c4F0926ACeB3ab13618": "agree",
+        "0x4619C8420D50c9dE477DB2CBb7b4863A041688CB": "idle",
+        "0x5e84e17266a193077728229751aC8A1dD24be146": "idle",
+        "0xB4EE99165ffe987E64B7b72e45a753309c501eef": "agree"
+      }
+    }
+  },
+  "policy_id": "af36bdbce2a20e844b357bb60294e91ce0271798ec560b1107e37c761a5f34bb",
+  "claim_id": "09286efcc48f3e7bff4e6a75fb7a29ec38c0e2ca24b0a0763573bf536e78d46d",
+  "manifest": {
+    "change_id": "CHG-2026-0042",
+    "artifact": "billing-api:sha256:abc123",
+    "url": "https://raw.githubusercontent.com/ANZA24k/ChangeGate/44cd5ba1257c545ba4ac1eea42ddc9c8b6bc15f9/fixtures/compliant.json",
+    "sha256": "12a8b40bf33c8c63e42635efcf0f4cb5ec8e7d30a9097e3de69ef025c06cc5e7",
+    "bytes": 1332
+  },
+  "signer": "0xBbf66924F68cE6705e16FCc5724f675c0281c0d7",
+  "receipt": {
+    "attempt": 1,
+    "chain_id": 61999,
+    "claim_id": "09286efcc48f3e7bff4e6a75fb7a29ec38c0e2ca24b0a0763573bf536e78d46d",
+    "contract": "0x217b9BC1B62c47443e441D40EDCE1Cd799A195fE",
+    "decision": {
+      "error": "",
+      "failures": [],
+      "findings": {
+        "approvals": {
+          "quote": "Alice, service owner, and Bob, change manager, explicitly approved billing-api:sha256:abc123 before deployment.",
+          "reason": "The narrative and structured records confirm both designated approvers approved the exact artifact, and the approval timestamps precede the deployment timestamp, satisfying the policy requirement.",
+          "status": "SUPPORTED"
+        },
+        "rollback": {
+          "quote": "Carol owns rollback: restore billing-api:sha256:previous if error rate exceeds 1 percent for five minutes.",
+          "reason": "The narrative explicitly names the rollback owner (Carol), the previous artifact (billing-api:sha256:previous), and the trigger (error rate exceeds 1 percent for five minutes), and confirms the procedure was rehearsed, fully meeting the policy.",
+          "status": "SUPPORTED"
+        },
+        "scope": {
+          "quote": "Ticket CHG-2026-0042 authorizes billing-api:sha256:abc123 in production; no other service is changed.",
+          "reason": "The narrative explicitly states the ticket authorizes the exact artifact and production environment, and the structured records confirm the artifact and environment match, fully meeting the policy criterion.",
+          "status": "SUPPORTED"
+        },
+        "testing": {
+          "quote": "Integration, migration and smoke tests all passed against billing-api:sha256:abc123 before production deployment.",
+          "reason": "The narrative specifies all three required test suites passed for the exact artifact prior to deployment, which is corroborated by the structured records showing tests passed before the deployment timestamp.",
+          "status": "SUPPORTED"
+        }
+      },
+      "outcome": "COMPLIANT"
+    },
+    "decision_hash": "a3743e533d8a3bed867cad3ef6dabec5a2bad6ab469e0d063baad432abaedae1",
+    "evidence_sha256": "12a8b40bf33c8c63e42635efcf0f4cb5ec8e7d30a9097e3de69ef025c06cc5e7",
+    "policy_hash": "1c61721ce56b48fa3538c2214e80dcb885c7f5a114ae0318bbfcf870c39ffeb9",
+    "policy_id": "af36bdbce2a20e844b357bb60294e91ce0271798ec560b1107e37c761a5f34bb",
+    "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "receipt_hash": "799922bb8361717edf42d9cdea58bf5b00ff877fa81015f957c96d970fca56ff",
+    "version": 1
+  }
+}

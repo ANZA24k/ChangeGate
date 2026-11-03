@@ -1,0 +1,126 @@
+{
+  "network": "studionet",
+  "chain_id": 61999,
+  "contract": "0x217b9BC1B62c47443e441D40EDCE1Cd799A195fE",
+  "evidence_commit": "44cd5ba1257c545ba4ac1eea42ddc9c8b6bc15f9",
+  "transactions": {
+    "submit_change": {
+      "hash": "0x8fa210c2bb37474c91d25e580cc6b6b75ec0eee0612451581e7dbbc7ef249b7d",
+      "status": "FINALIZED",
+      "consensus_result": "MAJORITY_AGREE",
+      "to": "0x217b9BC1B62c47443e441D40EDCE1Cd799A195fE",
+      "leader_only": false,
+      "leaders": [
+        {
+          "execution_result": "SUCCESS",
+          "result": {
+            "status": "return",
+            "payload": {
+              "readable": "\"9497d2f65ec16e68091e4ec2f3c8c2497569a92967b0ac313f738dabc8ee143f\""
+            }
+          },
+          "genvm_result": {
+            "stderr": "",
+            "stdout": "",
+            "raw_error": null,
+            "error_code": null,
+            "error_description": null
+          },
+          "mode": "leader"
+        }
+      ],
+      "votes": {
+        "0x0eb3859451817bC25Cc717D4F676D54D0D3aD0aE": "idle",
+        "0x4868b172ddEBC18b5219aaCeAB77ae0Df330c83A": "agree",
+        "0x63d72fE364368491E62a42B9C73c317Ce1ca8434": "agree",
+        "0x9C182DE7F93AdbE8ee3D62570613eC23c5683cAc": "agree",
+        "0xF7D08d12dB37D3e02D1833b5cB7e56B07F114186": "idle"
+      }
+    },
+    "evaluate_change": {
+      "hash": "0xfed97ffada91a30df4022e57cb6536c0a5a55b3e0edc91d921b4763aca7d9d35",
+      "status": "FINALIZED",
+      "consensus_result": "MAJORITY_AGREE",
+      "to": "0x217b9BC1B62c47443e441D40EDCE1Cd799A195fE",
+      "leader_only": false,
+      "leaders": [
+        {
+          "execution_result": "SUCCESS",
+          "result": {
+            "status": "return",
+            "payload": {
+              "readable": "\"{\\\"attempt\\\":1,\\\"chain_id\\\":61999,\\\"claim_id\\\":\\\"9497d2f65ec16e68091e4ec2f3c8c2497569a92967b0ac313f738dabc8ee143f\\\",\\\"contract\\\":\\\"0x217b9BC1B62c47443e441D40EDCE1Cd799A195fE\\\",\\\"decision\\\":{\\\"error\\\":\\\"\\\",\\\"failures\\\":[\\\"APPROVAL_SEQUENCE:change_manager\\\"],\\\"findings\\\":{\\\"approvals\\\":{\\\"quote\\\":\\\"Bob approved only after the production deployment had already completed; prior change-manager approval was missing.\\\",\\\"reason\\\":\\\"Policy requires both designated approvers to approve the same artifact before deployment. Structured times show deployment at 1793746800 and Bob's change-manager approval at 1793746801, so required approval scope was not satisfied before release.\\\",\\\"status\\\":\\\"BREACH\\\"},\\\"rollback\\\":{\\\"quote\\\":\\\"Carol owns rollback: restore billing-api:sha256:previous if error rate exceeds 1 percent for five minutes. This procedure was successfully rehearsed in staging for CHG-2026-0042.\\\",\\\"reason\\\":\\\"The narrative names the rollback owner, previous artifact, and trigger, and states the procedure was successfully rehearsed, satisfying the requirement for a tested rollback procedure. The rollback_ready flag is also consistent with this.\\\",\\\"status\\\":\\\"SUPPORTED\\\"},\\\"scope\\\":{\\\"quote\\\":\\\"Ticket CHG-2026-0042 authorizes billing-api:sha256:abc123 in production; no other service is changed.\\\",\\\"reason\\\":\\\"The narrative explicitly matches the policy requirement for the exact artifact and production scope, and the structured records align with change_id CHG-2026-0042, artifact billing-api:sha256:abc123, and environment production.\\\",\\\"status\\\":\\\"SUPPORTED\\\"},\\\"testing\\\":{\\\"quote\\\":\\\"Integration, migration and smoke tests all passed against billing-api:sha256:abc123 before production deployment.\\\",\\\"reason\\\":\\\"This directly covers all three required test types for the exact artifact and states they passed before deployment. Structured evidence also supports this with tests_passed=true and test_completed_at earlier than deployed_at.\\\",\\\"status\\\":\\\"SUPPORTED\\\"}},\\\"outcome\\\":\\\"VIOLATION\\\"},\\\"decision_hash\\\":\\\"b3777d90ac7e9f12bf0503c4243ba4f92056ba900e2c67218a173d87f2a58d18\\\",\\\"evidence_sha256\\\":\\\"6a224452deb5d99329db601603a3a1c29cd0ce5255f3fb945b9efcf9160acff2\\\",\\\"policy_hash\\\":\\\"1c61721ce56b48fa3538c2214e80dcb885c7f5a114ae0318bbfcf870c39ffeb9\\\",\\\"policy_id\\\":\\\"af36bdbce2a20e844b357bb60294e91ce0271798ec560b1107e37c761a5f34bb\\\",\\\"previous_hash\\\":\\\"0000000000000000000000000000000000000000000000000000000000000000\\\",\\\"receipt_hash\\\":\\\"523fed4f654c1191249e79f58f767b0b5de90f34b29cd90ab49b45570a88b7a2\\\",\\\"version\\\":1}\""
+            }
+          },
+          "genvm_result": {
+            "stderr": "",
+            "stdout": "",
+            "raw_error": null,
+            "error_code": null,
+            "error_description": null
+          },
+          "mode": "leader"
+        }
+      ],
+      "votes": {
+        "0x0eb3859451817bC25Cc717D4F676D54D0D3aD0aE": "idle",
+        "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a": "agree",
+        "0x63d72fE364368491E62a42B9C73c317Ce1ca8434": "agree",
+        "0x9C182DE7F93AdbE8ee3D62570613eC23c5683cAc": "disagree",
+        "0xe06A34A1eBd398AF3399d08593B8c3C433CdD947": "agree"
+      }
+    }
+  },
+  "policy_id": "af36bdbce2a20e844b357bb60294e91ce0271798ec560b1107e37c761a5f34bb",
+  "claim_id": "9497d2f65ec16e68091e4ec2f3c8c2497569a92967b0ac313f738dabc8ee143f",
+  "manifest": {
+    "change_id": "CHG-2026-0042",
+    "artifact": "billing-api:sha256:abc123",
+    "url": "https://raw.githubusercontent.com/ANZA24k/ChangeGate/44cd5ba1257c545ba4ac1eea42ddc9c8b6bc15f9/fixtures/violation.json",
+    "sha256": "6a224452deb5d99329db601603a3a1c29cd0ce5255f3fb945b9efcf9160acff2",
+    "bytes": 1317
+  },
+  "receipt": {
+    "attempt": 1,
+    "chain_id": 61999,
+    "claim_id": "9497d2f65ec16e68091e4ec2f3c8c2497569a92967b0ac313f738dabc8ee143f",
+    "contract": "0x217b9BC1B62c47443e441D40EDCE1Cd799A195fE",
+    "decision": {
+      "error": "",
+      "failures": [
+        "APPROVAL_SEQUENCE:change_manager"
+      ],
+      "findings": {
+        "approvals": {
+          "quote": "Bob approved only after the production deployment had already completed; prior change-manager approval was missing.",
+          "reason": "Policy requires both designated approvers to approve the same artifact before deployment. Structured times show deployment at 1793746800 and Bob's change-manager approval at 1793746801, so required approval scope was not satisfied before release.",
+          "status": "BREACH"
+        },
+        "rollback": {
+          "quote": "Carol owns rollback: restore billing-api:sha256:previous if error rate exceeds 1 percent for five minutes. This procedure was successfully rehearsed in staging for CHG-2026-0042.",
+          "reason": "The narrative names the rollback owner, previous artifact, and trigger, and states the procedure was successfully rehearsed, satisfying the requirement for a tested rollback procedure. The rollback_ready flag is also consistent with this.",
+          "status": "SUPPORTED"
+        },
+        "scope": {
+          "quote": "Ticket CHG-2026-0042 authorizes billing-api:sha256:abc123 in production; no other service is changed.",
+          "reason": "The narrative explicitly matches the policy requirement for the exact artifact and production scope, and the structured records align with change_id CHG-2026-0042, artifact billing-api:sha256:abc123, and environment production.",
+          "status": "SUPPORTED"
+        },
+        "testing": {
+          "quote": "Integration, migration and smoke tests all passed against billing-api:sha256:abc123 before production deployment.",
+          "reason": "This directly covers all three required test types for the exact artifact and states they passed before deployment. Structured evidence also supports this with tests_passed=true and test_completed_at earlier than deployed_at.",
+          "status": "SUPPORTED"
+        }
+      },
+      "outcome": "VIOLATION"
+    },
+    "decision_hash": "b3777d90ac7e9f12bf0503c4243ba4f92056ba900e2c67218a173d87f2a58d18",
+    "evidence_sha256": "6a224452deb5d99329db601603a3a1c29cd0ce5255f3fb945b9efcf9160acff2",
+    "policy_hash": "1c61721ce56b48fa3538c2214e80dcb885c7f5a114ae0318bbfcf870c39ffeb9",
+    "policy_id": "af36bdbce2a20e844b357bb60294e91ce0271798ec560b1107e37c761a5f34bb",
+    "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "receipt_hash": "523fed4f654c1191249e79f58f767b0b5de90f34b29cd90ab49b45570a88b7a2",
+    "version": 1
+  },
+  "signer": "0xBbf66924F68cE6705e16FCc5724f675c0281c0d7"
+}
